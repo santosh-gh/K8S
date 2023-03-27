@@ -20,6 +20,10 @@ https://k8s-examples.container-solutions.com/
 
   dotnet run --project .\HelloWorldWebApp\HelloWorldWebApp.csproj
 
+# Add .gitignore file 
+  Add the Extention .gitignore Generator
+  In VS code Command Palette Add .gitignore
+  
 # Add Dockerfile and .dockerignore
   
   - Install C# extention (C# for Visual Studio Code (powered by OmniSharp))
