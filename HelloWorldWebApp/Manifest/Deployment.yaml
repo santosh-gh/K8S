@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldwebapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworldwebapp
+  template:
+    metadata:
+      labels:
+        app: helloworldwebapp
+    spec:
+      containers:
+      - image: e880613/helloworldwebapp:v1
+        name: helloworldwebapp
