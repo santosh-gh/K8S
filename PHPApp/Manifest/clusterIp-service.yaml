@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloworldwebapp-service
+spec:
+  selector:
+    app: helloworldwebapp
+  ports:
+  - port: 80
+    targetPort: 80
