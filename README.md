@@ -6,6 +6,27 @@ https://devopscube.com/kubernetes-minikube-tutorial/
 https://www.dotnetcurry.com/aspnet-core/kubernetes-for-developers
 https://www.dotnetcurry.com/devops/1531/azure-devops-automated-terraform-cicd
 
+
+
+Disable/Enable Hyper-V in command line
+
+    # Enable
+    bcdedit /set hypervisorlaunchtype auto
+
+    # Disable
+    bcdedit /set hypervisorlaunchtype off
+
+
+minikube config set driver virtualbox
+minikube config set driver docker
+
+minikube stop
+minikube delete --all
+minikube start
+
+kubectl exec -it postgres-deployment-5f88678b76-kpl8b -n default -- /bin/bash
+
+
 # Example
 https://k8s-examples.container-solutions.com/
 

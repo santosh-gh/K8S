@@ -1,8 +1,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-EXPOSE 5110
+EXPOSE 5093
 
-ENV ASPNETCORE_URLS=http://+:5110
+ENV ASPNETCORE_URLS=http://+:5093
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-dotnet-configure-containers
@@ -11,7 +11,7 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["./HelloWorldWebApp.csproj", "HelloWorldWebApp/"]
+COPY ["./HelloWorldWebApp/HelloWorldWebApp.csproj", "HelloWorldWebApp/"]
 RUN dotnet restore "HelloWorldWebApp/HelloWorldWebApp.csproj"
 COPY . .
 WORKDIR "/src/HelloWorldWebApp"

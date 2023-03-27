@@ -8,7 +8,7 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MVCWebApp/MVCWebApp.csproj", "MVCWebApp/"]
+COPY ["MVCWebApp.csproj", "MVCWebApp/"]
 RUN dotnet restore "MVCWebApp/MVCWebApp.csproj"
 COPY . .
 WORKDIR "/src/MVCWebApp"
