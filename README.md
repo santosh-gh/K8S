@@ -31,6 +31,17 @@ kubectl exec -it postgres-deployment-5f88678b76-kpl8b -n default -- /bin/bash
 # Example
 https://k8s-examples.container-solutions.com/
 
+# Kubectl
+  kubectl cluster-info
+  kubectl get nodes
+  kubectl get events
+  kubectl get services
+  kubectl get pods
+  kubectl get namespace
+  kubectl get pods --namespace=kube-system
+  kubectl config view
+  kubectl get cs (see the Component Statuses)
+
 
 # HelloWorldWebApp
 
@@ -120,3 +131,20 @@ https://k8s-examples.container-solutions.com/
 
     kubectl get pods -n ingress-nginx
 
+# pod
+  kubectl apply -f .\HelloWorldWebApp\Manifest\pod\pod.yaml
+  kubectl describe pods/dotnetcoreapp-pod
+  kubectl describe pods dotnetcoreapp-pod
+  kubectl exec dotnetcoreapp-pod -- curl 172.17.0.3
+  kubectl delete pod dotnetcoreapp-pod
+  
+
+
+
+
+kubectl run dotnetapp --image=e880613/dotnetcoreapp --port=80 --restart="Never" -- labels="project=demo,env=prod"
+kubectl expose pod dotnetapp --port=8080 --target-port=80 --name="dotnetapp-service"
+
+
+kubectl get replicasets --selector=run=pythonapp
+kubectl scale deployments pythonapp-deployment --replicas=2

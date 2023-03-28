@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dotnetcoreapp-pod
+spec:
+  containers:
+  - name: dotnetcoreapp-pod
+    image: e880613/dotnetcoreapp:v1
+    ports:
+    - containerPort: 80

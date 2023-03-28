@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pythonapp-deployment
+spec:
+  selector:
+    matchLabels:
+      run: pythonapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: pythonapp
+    spec:
+      containers:
+      - name: pythonapp
+        image: e880613/pythonapp:v1
